@@ -1,0 +1,8 @@
+package com.example.geoquiz;
+
+import android.app.Activity;
+
+public class CheatActivity extends Activity {
+	public static final String EXTRA_ANSWER_IS_TRUE="com.example.geoquiz.answer_is_true";
+	
+}

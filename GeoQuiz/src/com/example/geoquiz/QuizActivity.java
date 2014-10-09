@@ -2,6 +2,7 @@ package com.example.geoquiz;
 
 //import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,7 @@ public class QuizActivity extends Activity {
 	private Button mTrueButton;
 	private Button mFalseButton;
 	private Button mNextButton;
+	private Button mCheatButton;
 	private TextView mQuestionTextView;
 	private TrueFalse[] mQuestionBank = new TrueFalse[]{
 			new TrueFalse(R.string.question_oceans, true),
@@ -24,6 +26,7 @@ public class QuizActivity extends Activity {
 			new TrueFalse(R.string.question_americas, true),
 			new TrueFalse(R.string.question_asia, true),};
 	private int mCurrentIndex = 0;
+	private boolean mIsCheater;
 	private void updateQuestion(){
 		int question = mQuestionBank[mCurrentIndex].getQuestion();
 		mQuestionTextView.setText(question);
@@ -31,14 +34,26 @@ public class QuizActivity extends Activity {
 	private void checkAnswer(boolean userPressedTrue){
 		boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
 		int messageResId = 0;
-		if(userPressedTrue == answerIsTrue){
-			messageResId = R.string.correct_toast;
-		}
-		else
-			messageResId = R.string.incorrect_toast;
+//		if(mIsCheater){
+//			messageResId = R.string.judgement_toast;
+//		}
+//		else
+//		{
+			if(userPressedTrue==answerIsTrue){
+				messageResId = R.string.correct_toast;
+			}
+			else
+				messageResId = R.string.incorrect_toast;
+	//	}	
 		Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show();
 	}
-    
+
+	@Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+    	if(data==null)
+    		return;
+    	mIsCheater= data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false);
+    }
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,19 +79,30 @@ public class QuizActivity extends Activity {
 				checkAnswer(false);					
 			}
 		});
-
         mNextButton = (Button)findViewById(R.id.next_button);
         mNextButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				mCurrentIndex = (mCurrentIndex+1)%mQuestionBank.length;
+				mIsCheater=false;
 				updateQuestion();
 			}
 		});
         if(savedInstanceState != null){
         	mCurrentIndex = savedInstanceState.getInt(KEY_INDEX,0);
         }
+        mCheatButton=(Button)findViewById(R.id.cheat_button);
+        mCheatButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent i = new Intent(QuizActivity.this, CheatActivity.class);
+				boolean answerIsTrue=mQuestionBank[mCurrentIndex].isTrueQuestion();
+				i.putExtra(CheatActivity.EXTRA_ANSWER_IS_TRUE, answerIsTrue);
+				startActivityForResult(i,0);
+			}
+		});
         updateQuestion();
     }
 	@Override
@@ -89,6 +115,9 @@ public class QuizActivity extends Activity {
 	public void onStart(){
 		super.onStart();
 		Log.d(TAG, "onStart() called");
+		if(mIsCheater){
+			Toast.makeText(this, R.string.judgement_toast, Toast.LENGTH_SHORT).show();
+		}
 	}
 	@Override
 	public void onPause(){
