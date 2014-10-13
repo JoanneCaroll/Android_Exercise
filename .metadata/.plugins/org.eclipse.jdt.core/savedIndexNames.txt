@@ -7,7 +7,6 @@ INDEX VERSION 1.126+/home/joannecaroll/Documents/Android_Exercise/.metadata/.plu
 2733052065.index
 2144184911.index
 624125829.index
-592692251.index
 1270315800.index
 1507822892.index
 3699643608.index
