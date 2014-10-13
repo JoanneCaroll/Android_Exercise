@@ -18,8 +18,5 @@ public class CrimeActivity extends SingleFragmentActivity {
 //				fm.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
 //			}
 //		}
-	@Override
-	protected Fragment createFragment(){
-		return new CrimeFragment();
-	}
+	
 }
