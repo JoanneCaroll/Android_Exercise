@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=CriminalIntent/\/home\/joannecaroll\/Documents\/Android_Exercise\/CriminalIntent\/libs\/android-support-v4.jar&lt;android.support.v4.app(ListFragment.class[ListFragment" modifiers="33" timestamp="1412914044000"/>
+<typeInfo handle="=CriminalIntent/\/home\/joannecaroll\/Documents\/Android_Exercise\/CriminalIntent\/libs\/android-support-v4.jar&lt;android.support.v4.app(FragmentActivity.class[FragmentActivity" modifiers="33" timestamp="1412914044000"/>
+<typeInfo handle="=CriminalIntent/src&lt;com.example.criminalintent{SingleFragmentActivity.java[SingleFragmentActivity" modifiers="1025" timestamp="1413165455000"/>
+</typeInfoHistroy>
