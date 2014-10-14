@@ -40,7 +40,6 @@ public class CrimeFragment extends Fragment {
 	private Button mDateButton;
 	private CheckBox mSolvedCheckBox;
 	@Override
-	//crimeId
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		UUID crimeId = (UUID)getArguments().getSerializable(EXTRA_CRIME_ID);
@@ -124,6 +123,11 @@ public class CrimeFragment extends Fragment {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+	@Override
+	public void onPause(){
+		super.onPause();
+		CrimeLab.get(getActivity()).saveCrimes();
 	}
 }
 
