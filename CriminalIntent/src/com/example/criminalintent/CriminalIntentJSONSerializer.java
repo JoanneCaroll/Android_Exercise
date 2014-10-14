@@ -23,31 +23,31 @@ public class CriminalIntentJSONSerializer {
 		mContext = c;
 		mFilename = f;
 	}
-//	public ArrayList<Crime> loadCrimes() throws IOException, JSONException {
-//		ArrayList<Crime> crimes = new ArrayList<Crime>();
-//		BufferedReader reader = null;
-//		try{
-//			InputStream in = mContext.openFileInput(mFilename);
-//			reader = new BufferedReader(new InputStreamReader(in));
-//			StringBuilder jsonString = new StringBuilder();
-//			String line = null;
-//			while((line = reader.readLine())!=null){
-//				jsonString.append(line);
-//			}
-//			JSONArray array = (JSONArray) new JSONTokener(jsonString.toString()).nextValue();
-//			for(int i=0;i<array.length(); i++){
-//				crimes.add(new Crime(array.getJSONObject(i)));
-//			}
-//		}
-//		catch (FileNotFoundException e){
-//			
-//		}
-//		finally{
-//			if(reader!=null)
-//				reader.close();
-//		}
-//		return crimes;
-//	}
+	public ArrayList<Crime> loadCrimes() throws IOException, JSONException {
+		ArrayList<Crime> crimes = new ArrayList<Crime>();
+		BufferedReader reader = null;
+		try{
+			InputStream in = mContext.openFileInput(mFilename);
+			reader = new BufferedReader(new InputStreamReader(in));
+			StringBuilder jsonString = new StringBuilder();
+			String line = null;
+			while((line = reader.readLine())!=null){
+				jsonString.append(line);
+			}
+			JSONArray array = (JSONArray) new JSONTokener(jsonString.toString()).nextValue();
+			for(int i=0;i<array.length(); i++){
+				crimes.add(new Crime(array.getJSONObject(i)));
+			}
+		}
+		catch (FileNotFoundException e){
+			
+		}
+		finally{
+			if(reader!=null)
+				reader.close();
+		}
+		return crimes;
+	}
 	public void saveCrimes(ArrayList<Crime> crimes) throws JSONException, IOException{
 		JSONArray array = new JSONArray();
 		for(Crime c : crimes)
