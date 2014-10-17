@@ -1079,6 +1079,7 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int background_activated=0x7f020057;
         public static final int ic_launcher=0x7f020058;
+        public static final int ic_menu_add=0x7f020059;
     }
     public static final class id {
         public static final int action_bar=0x7f05001d;
@@ -1092,7 +1093,6 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050025;
-        public static final int action_settings=0x7f05004a;
         public static final int activity_chooser_view_content=0x7f050026;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1126,9 +1126,9 @@ containing a value of this type.
         public static final int image=0x7f050028;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f05002a;
-        public static final int menu_item_delete_crime=0x7f05004b;
-        public static final int menu_item_new_crime=0x7f05004c;
-        public static final int menu_item_show_subtitle=0x7f05004d;
+        public static final int menu_item_delete_crime=0x7f05004a;
+        public static final int menu_item_new_crime=0x7f05004b;
+        public static final int menu_item_show_subtitle=0x7f05004c;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
@@ -1210,19 +1210,17 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int activity_crime=0x7f030018;
-        public static final int activity_crime_pager=0x7f030019;
-        public static final int activity_fragment=0x7f03001a;
-        public static final int dialog_date=0x7f03001b;
-        public static final int fragment_crime=0x7f03001c;
-        public static final int fragment_crime_camera=0x7f03001d;
-        public static final int list_item_crime=0x7f03001e;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
+        public static final int activity_crime_pager=0x7f030018;
+        public static final int activity_fragment=0x7f030019;
+        public static final int dialog_date=0x7f03001a;
+        public static final int fragment_crime=0x7f03001b;
+        public static final int fragment_crime_camera=0x7f03001c;
+        public static final int list_item_crime=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
-        public static final int crime=0x7f0c0000;
-        public static final int crime_list_item_context=0x7f0c0001;
-        public static final int fragment_crime_list=0x7f0c0002;
+        public static final int crime_list_item_context=0x7f0c0000;
+        public static final int fragment_crime_list=0x7f0c0001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1290,11 +1288,6 @@ containing a value of this type.
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
 
         Base application theme for API 14+. This theme completely replaces
         AppBaseTheme from BOTH res/values/styles.xml and

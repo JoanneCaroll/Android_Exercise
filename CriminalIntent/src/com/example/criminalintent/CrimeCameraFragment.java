@@ -1,5 +1,4 @@
 package com.example.criminalintent;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -21,13 +20,15 @@ public class CrimeCameraFragment extends Fragment {
     private static final String TAG = "CrimeCameraFragment";
 
     private Camera mCamera;
-    private SurfaceView mSurfaceView;    
+    private SurfaceView mSurfaceView;
     private View mProgressContainer;
 
+
     @Override
-    @SuppressWarnings("deprecation") //disables warning about deprecation
+    @SuppressWarnings("deprecation")
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime_camera, parent, false);
+
         mProgressContainer = v.findViewById(R.id.crime_camera_progressContainer);
         mProgressContainer.setVisibility(View.INVISIBLE);
         Button takePictureButton = (Button)v.findViewById(R.id.crime_camera_takePictureButton);
@@ -39,10 +40,12 @@ public class CrimeCameraFragment extends Fragment {
 
         mSurfaceView = (SurfaceView)v.findViewById(R.id.crime_camera_surfaceView);
         SurfaceHolder holder = mSurfaceView.getHolder();
+        // deprecated, but required for pre-3.0 devices
         holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
         holder.addCallback(new SurfaceHolder.Callback() {
 
             public void surfaceCreated(SurfaceHolder holder) {
+                // tell the camera to use this surface as its preview area
                 try {
                     if (mCamera != null) {
                         mCamera.setPreviewDisplay(holder);
@@ -53,14 +56,15 @@ public class CrimeCameraFragment extends Fragment {
             }
 
             public void surfaceDestroyed(SurfaceHolder holder) {
-                
+                // we can no longer display on this surface, so stop the preview.
                 if (mCamera != null) {
                     mCamera.stopPreview();
                 }
             }
 
             public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
-            	if (mCamera == null) return;            	
+            	if (mCamera == null) return;
+            	
                 // the surface has changed size; update the camera preview size
                 Camera.Parameters parameters = mCamera.getParameters();
                 Size s = getBestSupportedSize(parameters.getSupportedPreviewSizes(), w, h);
@@ -100,7 +104,10 @@ public class CrimeCameraFragment extends Fragment {
             mCamera = null;
         }
     }
- 
+
+    /** a simple algorithm to get the largest size available. For a more 
+     * robust version, see CameraPreview.java in the ApiDemos 
+     * sample app from Android. */
     private Size getBestSupportedSize(List<Size> sizes, int width, int height) {
         Size bestSize = sizes.get(0);
         int largestArea = bestSize.width * bestSize.height;
