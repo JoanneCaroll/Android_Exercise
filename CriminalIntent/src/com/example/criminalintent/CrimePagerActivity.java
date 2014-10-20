@@ -1,5 +1,4 @@
-package com.example.criminalintent;
-import java.util.ArrayList;
+package com.example.criminalintent;import java.util.ArrayList;
 import java.util.UUID;
 
 import android.os.Bundle;

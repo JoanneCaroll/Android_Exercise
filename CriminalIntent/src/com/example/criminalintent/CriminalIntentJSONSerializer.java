@@ -1,5 +1,4 @@
-package com.example.criminalintent;
-import java.io.BufferedReader;
+package com.example.criminalintent;import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;

@@ -1,5 +1,4 @@
 package com.example.criminalintent;
-
 import java.util.UUID;
 
 import android.support.v4.app.Fragment;
