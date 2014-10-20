@@ -32,7 +32,7 @@ public class CrimeListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         getActivity().setTitle(R.string.crimes_title);
-        mCrimes = CrimeLab.get(getActivity()).getCrime();
+        mCrimes = CrimeLab.get(getActivity()).getCrimes();
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
         setListAdapter(adapter);
         setRetainInstance(true);
@@ -102,8 +102,7 @@ public class CrimeListFragment extends ListFragment {
     
     public void onListItemClick(ListView l, View v, int position, long id) {
         // get the Crime from the adapter
-        
-    	Crime c = ((CrimeAdapter)getListAdapter()).getItem(position);
+        Crime c = ((CrimeAdapter)getListAdapter()).getItem(position);
         // start an instance of CrimePagerActivity
         Intent i = new Intent(getActivity(), CrimePagerActivity.class);
         i.putExtra(CrimeFragment.EXTRA_CRIME_ID, c.getId());

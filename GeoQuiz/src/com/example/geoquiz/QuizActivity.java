@@ -66,7 +66,7 @@ public class QuizActivity extends Activity {
         	ActionBar actionBar = getActionBar();
         	actionBar.setSubtitle("Bodies of water");
         }
-        mQuestionTextView =(TextView)findViewById(R.id.question_text_view);
+      //  mQuestionTextView =(TextView)findViewById(R.id.question_text_view);
 
         
         mTrueButton=(Button)findViewById(R.id.true_button);

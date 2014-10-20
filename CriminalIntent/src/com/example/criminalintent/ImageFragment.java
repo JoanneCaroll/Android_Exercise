@@ -42,4 +42,3 @@ public class ImageFragment extends DialogFragment {
         PictureUtils.cleanImageView(mImageView);
     }
 }
-

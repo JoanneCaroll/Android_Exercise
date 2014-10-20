@@ -1,5 +1,4 @@
 package com.example.criminalintent;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -23,7 +22,7 @@ public class CrimePagerActivity extends FragmentActivity {
         mViewPager.setId(R.id.viewPager);
         setContentView(mViewPager);
 
-        final ArrayList<Crime> crimes = CrimeLab.get(this).getCrime();
+        final ArrayList<Crime> crimes = CrimeLab.get(this).getCrimes();
 
         FragmentManager fm = getSupportFragmentManager();
         mViewPager.setAdapter(new FragmentStatePagerAdapter(fm) {
