@@ -1077,7 +1077,20 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int bar=0x7f020057;
+        public static final int bar_patch=0x7f020058;
+        public static final int button_shape=0x7f020059;
+        public static final int button_shape_normal=0x7f02005a;
+        public static final int button_shape_pressed=0x7f02005b;
+        public static final int button_shape_shadowed=0x7f02005c;
+        public static final int button_text_color=0x7f02005d;
+        public static final int ic_action_search=0x7f02005e;
+        public static final int ic_launcher=0x7f02005f;
+        public static final int inset=0x7f020060;
+        public static final int inset_patch=0x7f020061;
+        public static final int remote_background=0x7f020062;
+        public static final int window=0x7f020063;
+        public static final int window_patch=0x7f020064;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1091,7 +1104,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f05003c;
+        public static final int action_settings=0x7f050040;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1105,6 +1118,10 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
+        public static final int fragmentContainer=0x7f05003c;
+        public static final int fragment_remote_control_selectedTextView=0x7f05003e;
+        public static final int fragment_remote_control_tableLayout=0x7f05003d;
+        public static final int fragment_remote_control_workingTextView=0x7f05003f;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f05002a;
@@ -1192,8 +1209,11 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int activity_remote_control=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int activity_fragment=0x7f030018;
+        public static final int activity_remote_control=0x7f030019;
+        public static final int button_row=0x7f03001a;
+        public static final int fragment_remote_control=0x7f03001b;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
     }
     public static final class menu {
         public static final int remote_control=0x7f0c0000;
@@ -1245,15 +1265,6 @@ containing a value of this type.
     }
     public static final class style {
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
@@ -1265,11 +1276,9 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0b008b;
-        /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static final int AppTheme=0x7f0b008c;
+        public static final int AppBaseTheme=0x7f0b008d;
+        public static final int AppTheme=0x7f0b008b;
+        public static final int RemoteButton=0x7f0b008c;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0063;

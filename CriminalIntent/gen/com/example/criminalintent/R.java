@@ -1212,13 +1212,14 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
-        public static final int activity_crime_pager=0x7f030018;
-        public static final int activity_fragment=0x7f030019;
-        public static final int dialog_date=0x7f03001a;
-        public static final int fragment_crime=0x7f03001b;
-        public static final int fragment_crime_camera=0x7f03001c;
-        public static final int list_item_crime=0x7f03001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
+        public static final int activity_crime=0x7f030018;
+        public static final int activity_crime_pager=0x7f030019;
+        public static final int activity_fragment=0x7f03001a;
+        public static final int dialog_date=0x7f03001b;
+        public static final int fragment_crime=0x7f03001c;
+        public static final int fragment_crime_camera=0x7f03001d;
+        public static final int list_item_crime=0x7f03001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
     }
     public static final class menu {
         public static final int crime_list_item_context=0x7f0c0000;
