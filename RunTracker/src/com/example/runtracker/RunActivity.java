@@ -1,36 +1,19 @@
 package com.example.runtracker;
 
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.Fragment;
 
-
-public class RunActivity extends ActionBarActivity {
-
+public class RunActivity extends SingleFragmentActivity {
+    /** A key for passing a run ID as a long */
+    public static final String EXTRA_RUN_ID = "RUN_ID";
+    
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_run);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.run, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+    protected Fragment createFragment() {
+        long runId = getIntent().getLongExtra(EXTRA_RUN_ID, -1);
+        if (runId != -1) {
+            return RunFragment.newInstance(runId);
+        } else {
+            return new RunFragment();
         }
-        return super.onOptionsItemSelected(item);
     }
+
 }
